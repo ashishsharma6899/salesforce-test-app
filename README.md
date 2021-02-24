@@ -1,6 +1,8 @@
 # salesforce-test-app
 salesforce rest api integration
 
+Note: Create a directory to write a data into file and give this configuration in property file(file directory path only) 
+
 1. http://localhost:8080/salesforce/health
 Request Http Method - GET
 Health Check API

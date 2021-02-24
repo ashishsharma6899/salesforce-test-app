@@ -41,7 +41,7 @@ public class DemoService {
 		try {
 			response = restTemplate.exchange(salesforceUrl + "/services/data/v50.0/tooling/sobjects", HttpMethod.GET,
 					entity, String.class).getBody();
-			Utility.writeInFile(response, filePath);
+			Utility.writeInFile(response, filePath + "\\toolingobjectlist.txt");
 		} catch (Exception e) {
 			LOG.error("Error while connecting to salesforce app ", e);
 			response = e.getMessage();
@@ -60,7 +60,7 @@ public class DemoService {
 		try {
 			response = restTemplate.exchange(salesforceUrl + "/services/data/v50.0/tooling/sobjects/" + sObjectName,
 					HttpMethod.GET, entity, String.class).getBody();
-			Utility.writeInFile(response, filePath);
+			Utility.writeInFile(response, filePath + "\\sobjectdetail.txt");
 		} catch (Exception e) {
 			LOG.error("Error while connecting to salesforce app ", e);
 			response = e.getMessage();
@@ -80,7 +80,7 @@ public class DemoService {
 					.exchange(salesforceUrl + "/services/data/v50.0/tooling/sobjects/" + sObjectName + "/describe",
 							HttpMethod.GET, entity, String.class)
 					.getBody();
-			Utility.writeInFile(response, filePath);
+			Utility.writeInFile(response, filePath + "\\sobjectdescription.txt");
 		} catch (Exception e) {
 			LOG.error("Error while connecting to salesforce app ", e);
 			response = e.getMessage();
@@ -99,7 +99,7 @@ public class DemoService {
 		try {
 			response = restTemplate.exchange(salesforceUrl + "/services/data/v50.0/query/?q=" + query, HttpMethod.GET,
 					entity, String.class).getBody();
-			Utility.writeInFile(response, filePath);
+			Utility.writeInFile(response, filePath + "\\queryresponse.txt");
 		} catch (Exception e) {
 			LOG.error("Error while connecting to salesforce app ", e);
 			response = e.getMessage();
